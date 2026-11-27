@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What's your level</title>
+<meta name="description" content="FOXY's free quest guides: one quick grooming, style or photo trick a day, with the steps, what you need and a checklist.">
+<meta property="og:title" content="What's your level? · FOXY's free quest guides">
+<meta property="og:description" content="One quick grooming, style or photo trick a day. Steps, what you need and a checklist you can copy.">
+<meta property="og:image" content="https://d2ol7oe51mr4n9.cloudfront.net/user_398gTQGa4GMr7U58iASEJju7zf7/35906803-d303-4c62-969c-c3baf344ae5e.jpg">
+<meta property="og:url" content="https://whatsyourlevel.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="https://d2ol7oe51mr4n9.cloudfront.net/user_398gTQGa4GMr7U58iASEJju7zf7/35906803-d303-4c62-969c-c3baf344ae5e.jpg">
+<style>
+/* VOICE a friend's game guide: playful, clean, quick to act on
+   IDEA a game's quest board: every trick is a level you unlock, starting at LV 20 like the reels
+   PICTURE FOXY's real reel covers and scenes: a sliding quest wall, a quest log with thumbnails, photo-led guides
+   COLOUR Foxy's cobalt suit as ground, Yellow Punk and Red Orange accents, white
+   TYPE Paperlogy 900/500, the reels' caption font
+   LAYOUT hero (title + latest quest | quest log), full-width cover wall, how it works, keyword finder, photo guides, next drop */
+@font-face{font-family:PL;src:url(https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2) format("woff2");font-weight:900;font-display:swap}
+@font-face{font-family:PL;src:url(https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2) format("woff2");font-weight:500;font-display:swap}
+:root{color-scheme:light dark;
+  --bg:light-dark(#FDFDFF,#0B1240);--ink:light-dark(#101433,#F2F4FF);--soft:light-dark(#545a7a,#aab3dd);
+  --panel:light-dark(#ffffff,#141d57);--line:light-dark(#e3e6f3,#28338c);--cob:light-dark(#1C3FD1,#142ea3);
+  --deep:#0d1340;--yp:#D3F950;--ro:#F42902;--sw:#FDFDFF}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:76px;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 16px/1.55 PL,system-ui,sans-serif;overflow-x:clip}
+img{max-width:100%}
+a{color:inherit}
+b,strong,h1,h2,h3,.btn,.chip,.lv{font-weight:900}
+.band{padding:clamp(28px,4vw,60px) max(5vw,16px)}
+.wrap{max-width:1200px;margin:0 auto}
+h1,h2,h3{line-height:1.05;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,3.8vw,42px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border:0;border-radius:12px;font:900 15px PL,sans-serif;cursor:pointer;text-decoration:none}
+.btn:focus-visible,input:focus-visible,.q:focus-within,a:focus-visible,button:focus-visible{outline:3px solid var(--yp);outline-offset:2px}
+.b-yp{background:var(--yp);color:var(--ro)}.b-ro{background:var(--ro);color:var(--sw)}
+.b-ghost{background:transparent;color:var(--sw);box-shadow:inset 0 0 0 2px rgba(253,253,255,.6)}
+.b-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+.chip{display:inline-flex;font-size:12px;line-height:1;letter-spacing:.04em;padding:7px 9px 5px;border-radius:6px;white-space:nowrap}
+.c-yp{background:var(--yp);color:var(--ro)}.c-new{background:var(--ro);color:var(--sw)}
+.lv{display:inline-grid;place-items:center;background:var(--ro);color:var(--sw);border-radius:8px;padding:5px 8px 3px;font-size:14px;white-space:nowrap}
+header{position:sticky;top:0;z-index:5;background:var(--cob);color:var(--sw)}
+header .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:10px max(5vw,16px)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px;text-decoration:none}
+nav{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap}
+nav a{padding:10px 11px;border-radius:10px;text-decoration:none;font-size:15px}
+nav a:hover{background:rgba(253,253,255,.14)}
+.hero{background:var(--cob);color:var(--sw)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(44px,6.2vw,74px)}
+.hero h1 em{font-style:normal;color:var(--yp)}
+.hero p{font-size:18px;max-width:34em;opacity:.94;margin:16px 0 24px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.latest{display:flex;gap:14px;align-items:center;margin-top:24px;max-width:30em;background:rgba(253,253,255,.1);border-radius:16px;padding:10px;text-decoration:none;color:var(--sw);transition:background .3s}
+.latest:hover{background:rgba(253,253,255,.18)}
+.latest img{width:64px;height:114px;object-fit:cover;border-radius:10px;flex:none;animation:bob 3.6s ease-in-out infinite}
+.latest b{display:block;font-size:18px;margin-top:8px;line-height:1.15}
+.latest small{display:block;opacity:.85;font-size:14px;margin-top:4px}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-5px) rotate(-1deg)}}
+.log{background:var(--panel);color:var(--ink);border-radius:22px;padding:18px;box-shadow:0 18px 40px rgba(5,10,50,.32)}
+.log-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.ava{position:relative;width:92px;height:92px;flex:none}
+.ava svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.ava circle{fill:none;stroke-width:8}
+.ava .trk{stroke:var(--line)}
+.ava .arc{stroke:var(--ro);stroke-linecap:round;transition:stroke-dasharray .9s cubic-bezier(.2,.8,.2,1)}
+.ava img{position:absolute;inset:10px;width:72px;height:72px;border-radius:50%;object-fit:cover}
+.big{display:flex;align-items:baseline;gap:8px;background:var(--ro);color:var(--sw);border-radius:14px;padding:8px 16px 4px}
+.big small{font-weight:900;font-size:18px}.big b{font-size:50px;line-height:1}
+.big.pop{animation:pop .5s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.16)}100%{transform:scale(1)}}
+.rank b{display:block;font-size:21px}.rank small{display:block;font-size:14px;color:var(--soft)}
+.qlist{max-height:430px;overflow-y:auto;margin-top:12px;display:grid;gap:2px}
+.q{display:flex;align-items:center;gap:10px;padding:6px 8px;border-radius:12px;cursor:pointer}
+.q:hover{background:light-dark(#f2f4fb,#1b2668)}
+.q img{width:36px;height:64px;object-fit:cover;border-radius:7px;flex:none}
+.q input{width:22px;height:22px;accent-color:var(--ro);flex:none;margin-left:auto}
+.q .t{flex:1;font-weight:900;font-size:15px;line-height:1.25}.q .t small{display:block;font-weight:500;color:var(--soft);font-size:13px}
+.q.done .t{text-decoration:line-through;text-decoration-color:var(--ro)}
+.wall{background:var(--deep);color:var(--sw)}
+.head{display:flex;align-items:end;gap:16px;flex-wrap:wrap}
+.head p{margin:8px 0 0;color:var(--soft)}
+.wall .head p{color:rgba(253,253,255,.8)}
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px 4px 12px;scrollbar-width:thin}
+.cover{flex:0 0 clamp(170px,21vw,230px);scroll-snap-align:start;aspect-ratio:9/16;border-radius:18px;position:relative;overflow:hidden;background:var(--cob);color:var(--sw);text-decoration:none;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cover:hover{transform:translateY(-6px) rotate(-1.2deg)}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.3) 50%,transparent 65%);transform:translateX(-120%);transition:transform .8s}
+.cover:hover::after{transform:translateX(120%)}
+.cover>.chip{position:absolute;top:10px;right:10px}
+.cover.is-new{box-shadow:inset 0 0 0 3px var(--yp)}
+.cover.lock:hover{transform:none}
+.cover.lock img{filter:blur(12px) saturate(.8);transform:scale(1.12)}
+.cover svg,.nx-pic svg{position:absolute;top:12%;left:50%;width:56%;transform:translateX(-50%);opacity:.55}
+.lockbox{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(13,19,64,.5);text-align:center;font-weight:900;padding:12px}
+.lockbox .cd{font-size:22px;color:var(--yp);white-space:nowrap}
+.rail-nav{display:flex;gap:8px;margin-left:auto}
+.rail-nav button{width:48px;height:48px;border-radius:12px;border:2px solid rgba(253,253,255,.28);background:rgba(253,253,255,.08);color:var(--sw);font-size:20px;cursor:pointer}
+.how{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:20px}
+.how>div{background:var(--panel);border:2px solid var(--line);border-radius:18px;padding:14px}
+.viz{height:124px;border-radius:12px;background:var(--cob);display:grid;place-items:center;margin-bottom:12px;overflow:hidden}
+.viz img{width:60px;height:107px;object-fit:cover;border-radius:9px;transform:rotate(-6deg);box-shadow:0 8px 18px rgba(0,0,0,.35)}
+.bub{background:#fff;color:#101433;border-radius:18px 18px 18px 4px;padding:10px 16px 8px;font-weight:900;font-size:20px}
+.dm{background:var(--yp);color:#1a1d07;border-radius:18px 18px 4px 18px;padding:10px 14px 8px;font-weight:900;font-size:15px;max-width:84%}
+.dm i{display:block;font-style:normal;font-weight:500;font-size:13px;opacity:.75}
+.lvup{background:var(--ro);color:var(--sw);border-radius:12px;padding:8px 14px 6px;font-weight:900;font-size:20px;animation:bump 2.4s ease-in-out infinite}
+@keyframes bump{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.how h3{font-size:18px;margin-bottom:4px;display:flex;gap:8px;align-items:center}
+.how h3 b{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--cob);color:var(--sw);font-size:14px;flex:none}
+.how p{margin:0;color:var(--soft);font-size:15px}
+.kw{background:var(--yp);color:#1a1d07}
+.kw .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:24px;align-items:center}
+.kw p{margin:10px 0 0;max-width:30em}
+form{display:flex;gap:10px;flex-wrap:wrap}
+form input{flex:1 1 220px;min-height:52px;border-radius:12px;border:2px solid #1a1d07;padding:0 16px;font:900 18px PL,sans-serif;text-transform:uppercase;background:#fff;color:#101433}
+.kws{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.kws button{min-height:40px;border:2px solid #1a1d07;background:transparent;border-radius:10px;font:900 14px PL,sans-serif;padding:0 12px;cursor:pointer;color:#1a1d07}
+#kwmsg{min-height:24px;margin-top:10px;font-weight:900}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:18px;margin-top:22px}
+.g{background:var(--panel);border:2px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px;scroll-margin-top:84px;transition:border-color .3s,box-shadow .3s;overflow:hidden}
+.g.hit{border-color:var(--ro);box-shadow:0 0 0 5px rgba(244,41,2,.18)}
+.g.cleared .done-btn{background:var(--yp);color:var(--ro)}
+.ph{position:relative;margin:-20px -20px 2px;aspect-ratio:4/3;overflow:hidden;background:var(--deep)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.g:hover .ph img{transform:scale(1.05)}
+.ph::after{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(transparent,rgba(8,12,40,.8));pointer-events:none}
+.tags{position:absolute;left:12px;right:12px;bottom:12px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;z-index:1}
+.reel{margin-left:auto;color:var(--sw);font-weight:900;font-size:14px;text-decoration:none;background:rgba(13,19,64,.65);padding:8px 10px 6px;border-radius:8px}
+.g-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.g-h{display:flex;align-items:baseline;gap:10px}
+.g h3{font-size:24px}
+.time{margin-left:auto;font-size:13px;color:var(--soft);font-weight:900;white-space:nowrap}
+.goal{margin:-4px 0 0;font-size:16px}
+.sub{font-weight:900;font-size:13px;letter-spacing:.08em;color:var(--soft);margin:2px 0 -4px}
+ol{margin:0;padding-left:22px;display:grid;gap:6px}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.strip figure{margin:0}
+.strip img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;background:var(--deep)}
+.strip figcaption{font-size:13px;font-weight:900;margin-top:5px;line-height:1.25}
+.rule{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.rule li{display:flex;gap:8px;align-items:flex-start;font-weight:900}
+.rule .ic{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px}
+.rule .ok .ic{background:var(--yp);color:var(--ro)}.rule .no .ic{background:var(--ro);color:var(--sw)}
+.kit{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.kit a{display:flex;align-items:center;gap:10px;justify-content:space-between;border:2px solid var(--line);border-radius:12px;padding:10px 12px;text-decoration:none;font-weight:900;font-size:15px}
+.kit a:hover{border-color:var(--cob)}
+.kit .free{border-style:dashed;color:var(--soft);font-weight:500}
+.kit a div{flex:1}.kit a small{display:block;font-weight:500;font-size:13px;color:var(--soft);margin-top:2px}
+.kit a em{flex:none;font-style:normal;font-size:13px;color:var(--soft);font-weight:500}
+.miss{list-style:none;margin:0;padding:0;display:grid;gap:6px}.miss li{display:flex;gap:8px}.miss li::before{content:"✕";color:var(--ro);font-weight:900;flex:none}
+.bonus{background:var(--yp);color:#1a1d07;border-radius:14px;padding:12px 14px}.bonus b{color:var(--ro)}
+.bonus span{font-size:13px;font-weight:900;margin-left:8px;opacity:.7}.bonus p{margin:6px 0 0}
+details summary{cursor:pointer;font-weight:900;color:var(--soft)}details p{margin:6px 0 0;color:var(--soft)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.acts .btn{min-height:44px;font-size:14px}
+.next{background:var(--deep);color:var(--sw)}
+.next .wrap{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.nx-pic{width:110px;aspect-ratio:9/16;border-radius:14px;overflow:hidden;flex:none;position:relative;background:var(--cob)}
+.nx-pic img{width:100%;height:100%;object-fit:cover;filter:blur(8px);transform:scale(1.1)}
+.nx-pic::after{content:"?";position:absolute;inset:0;display:grid;place-items:center;font-weight:900;font-size:44px;color:var(--yp)}
+.nx-t{flex:1 1 300px}
+.next h2 em{font-style:normal;color:var(--yp);white-space:nowrap}
+.next p{margin:8px 0 0;opacity:.85}
+.brandbox{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start;border:2px solid var(--line);border-radius:22px;padding:24px}
+.brandbox p{max-width:46em;color:var(--soft);margin:10px 0 18px}
+.mail{display:grid;gap:8px;justify-items:start}.mail small{color:var(--soft)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(8em,1fr));gap:10px;margin-bottom:16px}
+.kpis div{background:light-dark(#f2f4fb,#1b2668);border-radius:14px;padding:12px 14px 10px}
+.kpis b{display:block;font-size:30px;line-height:1.05;white-space:nowrap;font-variant-numeric:tabular-nums}
+.kpis span{font-size:13px;color:var(--soft)}
+.bars{display:grid;gap:8px}
+.bar{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;text-decoration:none}
+.bar img{width:28px;height:50px;object-fit:cover;border-radius:5px}
+.bar small{display:block;font-size:13px;color:var(--soft);margin-bottom:4px}
+.bar i{display:block;height:14px;border-radius:4px;background:var(--cob);min-width:4px}
+.bar em{font-style:normal;font-weight:900;white-space:nowrap;font-variant-numeric:tabular-nums}
+.asof{font-size:13px;color:var(--soft);margin-top:12px}
+.share .wrap{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.share p{margin:10px 0 0;max-width:32em;color:var(--soft)}
+.lvcard{position:relative;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:var(--cob);color:var(--sw);display:flex;flex-direction:column;align-items:center;text-align:center;padding:22px 16px;isolation:isolate}
+.lvcard::before{content:"";position:absolute;left:-40%;right:-40%;top:-30%;height:100%;background:repeating-conic-gradient(from 0deg at 50% 50%,rgba(211,249,80,.24) 0 8deg,transparent 8deg 16deg);animation:spin 70s linear infinite;z-index:-2}
+.lvcard::after{content:"";position:absolute;left:0;right:0;bottom:0;height:56%;background:linear-gradient(transparent,var(--cob) 28%);z-index:-1}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lvcard .face{width:56%;aspect-ratio:1;height:auto;border-radius:50%;object-fit:cover;border:5px solid var(--yp);margin:6% 0 auto}
+.lvcard .me{font-weight:900;font-size:15px;opacity:.9}
+.lvcard .num{font-weight:900;font-size:clamp(52px,8vw,72px);line-height:.95;color:var(--yp);white-space:nowrap}
+.lvcard .rk{background:var(--ro);border-radius:8px;padding:6px 10px 4px;font-weight:900;font-size:15px;margin-top:8px}
+.lvcard .mini{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;margin:12px 0 10px;min-height:50px}
+.lvcard .mini img{width:28px;height:50px;object-fit:cover;border-radius:5px;border:2px solid rgba(253,253,255,.75)}
+.lvcard .q2{font-weight:900;font-size:20px}
+.lvcard .tg{font-size:14px;opacity:.9}
+.steps3{margin:14px 0 18px;padding-left:22px;display:grid;gap:6px}
+.sharelink{display:inline-block;margin-top:10px;font-weight:900;font-size:14px;color:var(--ro)}
+footer{padding:28px max(5vw,16px);font-size:14px;color:var(--soft)}
+footer .wrap{display:flex;gap:10px 24px;flex-wrap:wrap;justify-content:space-between}
+@media(max-width:860px){.hero .wrap,.kw .wrap,.brandbox{grid-template-columns:1fr}.how{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.share .wrap{grid-template-columns:1fr}.lvcard{max-width:320px;width:100%;margin:0 auto}}
+@media(max-width:600px){nav a{padding:10px 7px;font-size:14px}.big b{font-size:42px}.how{grid-template-columns:1fr}.qlist{max-height:360px}.rail-nav{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top"><span class="lv" id="hlv">LV 20</span>What's your level</a>
+  <nav aria-label="Sections"><a href="#quests">Quests</a><a href="#how">How it works</a><a href="#guides">Guides</a><a href="#brands">For brands</a><a href="https://www.instagram.com/whatsyourlevel_/" target="_blank" rel="noopener">Instagram</a></nav>
+</div></header>
+
+<section class="band hero" id="top"><div class="wrap">
+  <div>
+    <h1>What's your <em>level?</em></h1>
+    <p>One quick grooming, style or photo trick a day from FOXY, written down for you: the steps, what you need, and a checklist you can copy. Everyone starts at LV 20. Every quest you clear is +1 level.</p>
+    <div class="cta">
+      <a class="btn b-yp" href="#keyword">Find my guide</a>
+      <a class="btn b-ghost" href="https://www.instagram.com/whatsyourlevel_/" target="_blank" rel="noopener">Follow @whatsyourlevel_</a>
+    </div>
+    <a class="latest" id="latest" href="#guides"></a>
+  </div>
+  <div class="log" aria-label="Your quest log">
+    <div class="log-top">
+      <div class="ava" aria-hidden="true"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="45"/><circle class="arc" id="arc" cx="50" cy="50" r="45" pathLength="100" stroke-dasharray="0 100"/></svg><img data-img="img/foxy.jpg" alt="" width="72" height="72"></div>
+      <div class="big" id="big"><small>LV</small><b id="lvnum">20</b></div>
+      <div class="rank"><b id="rname">Starter</b><small id="rsub">Tick the quests you've already done</small></div>
+    </div>
+    <div class="qlist" id="qlist"></div>
+    <a class="sharelink" href="#card">Make my level card ↓</a>
+  </div>
+</div></section>
+
+<section class="band wall" id="quests"><div class="wrap">
+  <div class="head">
+    <div><h2>All quests</h2><p>Every level so far, straight from the reels. Tap a cover to open its guide.</p></div>
+    <div class="rail-nav"><button id="prev" aria-label="Previous quests">&larr;</button><button id="next" aria-label="Next quests">&rarr;</button></div>
+  </div>
+  <div class="rail" id="rail" tabindex="0" aria-label="Quest covers"></div>
+</div></section>
+
+<section class="band" id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="how">
+    <div><div class="viz" id="v1"></div><h3><b>1</b>Watch a FOXY reel</h3><p>Each reel is one quest, 25 seconds or less.</p></div>
+    <div><div class="viz"><span class="bub" id="v2">TONGUE</span></div><h3><b>2</b>Comment the keyword</h3><p>The reel ends with one word. Comment it, and follow so the DM can reach you.</p></div>
+    <div><div class="viz"><span class="dm">Here's your free guide<i>FOXY · just now</i></span></div><h3><b>3</b>Get the guide</h3><p>FOXY DMs you its guide: more than the reel, with exact steps, mistakes to avoid and a bonus trick.</p></div>
+    <div><div class="viz"><span class="lvup">LV 21 ↑</span></div><h3><b>4</b>Clear it, level up</h3><p>Do the steps, tick the quest, +1 LV.</p></div>
+  </div>
+</div></section>
+
+<section class="band kw" id="keyword"><div class="wrap">
+  <div>
+    <h2>Got a keyword from a reel?</h2>
+    <p>Type it here and that quest's guide opens: steps, what you need, and a checklist to copy.</p>
+  </div>
+  <div>
+    <form id="kwform" autocomplete="off">
+      <input id="kwin" aria-label="Keyword" placeholder="e.g. KNOT" maxlength="20">
+      <button class="btn b-ro" type="submit">Open guide</button>
+    </form>
+    <div class="kws" id="kws"></div>
+    <div id="kwmsg" role="status"></div>
+  </div>
+</div></section>
+
+<section class="band" id="guides"><div class="wrap">
+  <div class="head"><div><h2>Free guides</h2><p>More than the reel: what you need, exact steps, scenes from the reel, mistakes to avoid, and a bonus trick that's only here.</p></div></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section class="band share" id="card"><div class="wrap">
+  <div class="lvcard" aria-label="Your level card">
+    <img class="face" data-img="img/foxy.jpg" alt="FOXY" width="720" height="720">
+    <div class="me">I'M</div>
+    <div class="num" id="cnum">LV 20</div>
+    <div class="rk" id="crank">STARTER</div>
+    <div class="mini" id="cmini"></div>
+    <div class="q2">What's your level?</div>
+    <div class="tg">@whatsyourlevel_</div>
+  </div>
+  <div>
+    <h2>Show your level</h2>
+    <p id="cmsg">Tick the quests you've cleared and this card levels up with you.</p>
+    <ol class="steps3"><li>Screenshot this card.</li><li>Post it to your story.</li><li>Tag @whatsyourlevel_ so FOXY sees it.</li></ol>
+    <div class="cta"><button class="btn b-ro" type="button" id="ccopy">Copy story caption</button><a class="btn b-line" href="#top">Tick my quests</a></div>
+  </div>
+</div></section>
+
+<section class="band next" id="nextdrop"><div class="wrap">
+  <div class="nx-pic" id="nxpic" aria-hidden="true"></div>
+  <div class="nx-t"><h2 id="nxh">Next quest drops at <em>7 PM ET</em></h2><p id="nxp">A new level every day. Follow so the next one finds you.</p></div>
+  <a class="btn b-yp" href="https://www.instagram.com/whatsyourlevel_/" target="_blank" rel="noopener">Follow @whatsyourlevel_</a>
+</div></section>
+
+<section class="band" id="brands"><div class="wrap brandbox">
+  <div><h2>Want your product in a quest?</h2>
+  <p>Every product on this page links to the brand's own site, tagged <b>utm_source=whatsyourlevel</b>, so you can see the visits FOXY sends you in your own analytics. Each reel shows one product in real use, tags the brand, and ends with a comment keyword that sends viewers to the guide.</p>
+  <div class="mail"><a class="btn b-ro" href="mailto:beomchanggim520@naver.com?subject=Collab%20with%20FOXY">Email FOXY</a><small>beomchanggim520@naver.com</small></div></div>
+  <div><div class="kpis" id="kpis"></div><div class="bars" id="bars"></div><div class="asof" id="asof"></div></div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>What's your level · guides by FOXY</span>
+  <span>Collabs and brand deals: <a href="mailto:beomchanggim520@naver.com">beomchanggim520@naver.com</a></span>
+</div></footer>
+
+<script src="data.js"></script>
+<script>
+{
+const UTM = id => 'utm_source=whatsyourlevel&utm_medium=social&utm_campaign=foxy_guides&utm_content=' + id;
+const linkFor = (ref, id) => ref.startsWith('http') ? ref + (ref.includes('?') ? '&' : '?') + UTM(id) : 'https://www.amazon.com/s?k=' + encodeURIComponent(ref);
+const reel = c => 'https://www.instagram.com/reel/' + c + '/';
+const { Q, STATS, IMG } = window.WYL;
+const im = p => (p && IMG[p]) || p;
+Q.forEach(q => { q.t0 = Date.parse(q.drop); });
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const RANK = lv => lv >= 31 ? 'Legend' : lv >= 28 ? 'Pro' : lv >= 25 ? 'Sharp' : lv >= 23 ? 'Rising' : lv >= 21 ? 'Rookie' : 'Starter';
+const fox = '<svg viewBox="0 0 100 90" aria-hidden="true"><path d="M14 4 L36 30 L64 30 L86 4 L82 46 Q80 74 50 86 Q20 74 18 46 Z" fill="#F42902"/><path d="M30 52 Q50 44 70 52 Q66 74 50 80 Q34 74 30 52 Z" fill="#FDFDFF"/><rect x="27" y="38" width="20" height="13" rx="4" fill="none" stroke="#D7DCE6" stroke-width="3"/><rect x="53" y="38" width="20" height="13" rx="4" fill="none" stroke="#D7DCE6" stroke-width="3"/><path d="M47 44 L53 44" stroke="#D7DCE6" stroke-width="3"/><path d="M30 26 Q50 14 70 26 L68 34 Q50 26 32 34 Z" fill="#111"/><ellipse cx="50" cy="60" rx="5" ry="4" fill="#3a2a22"/></svg>';
+const coverOf = q => im(q.cover || 'img/foxy.jpg');
+const when = t => { try { return new Intl.DateTimeFormat(undefined, {weekday:'short', hour:'numeric', minute:'2-digit', timeZoneName:'short'}).format(new Date(t)); } catch (e) { return new Date(t).toLocaleString(); } };
+const left = ms => { const s = Math.max(0, Math.floor(ms / 1000)), d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), x = s % 60; return d ? d + 'd ' + h + 'h ' + m + 'm' : h + 'h ' + String(m).padStart(2, '0') + 'm ' + String(x).padStart(2, '0') + 's'; };
+function renderStats() {
+  const fmt = n => n.toLocaleString('en-US'), tot = STATS.reels.reduce((s, r) => s + r[2], 0), max = Math.max(...STATS.reels.map(r => r[2]));
+  $('kpis').innerHTML = `<div><b>${fmt(tot)}</b><span>Reel views</span></div><div><b>${fmt(Math.round(tot / STATS.reels.length))}</b><span>Average per reel</span></div><div><b>${fmt(STATS.followers)}</b><span>Followers</span></div><div><b>Daily</b><span>New reel at 7 PM ET</span></div>`;
+  $('bars').innerHTML = STATS.reels.slice().sort((a, b) => b[1] - a[1]).map(([code, lv, v]) => { const q = Q.find(x => x.lv === lv); return `<a class="bar" href="${reel(code)}" target="_blank" rel="noopener"><img src="${coverOf(q)}" alt="" width="28" height="50" loading="lazy"><span><small>LV ${lv} · ${esc(q.name)}</small><i style="width:${Math.round(100 * v / max)}%"></i></span><em>${fmt(v)}</em></a>`; }).join('');
+  $('asof').textContent = 'Instagram numbers as of ' + new Date(STATS.asOf + 'T12:00:00+09:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) + '. Updated as new reels go out.';
+}
+let done = new Set();
+try { done = new Set(JSON.parse(localStorage.getItem('wyl-done') || '[]').filter(id => Q.some(q => q.id === id))); } catch (e) {}
+const save = () => { try { localStorage.setItem('wyl-done', JSON.stringify([...done])); } catch (e) {} };
+let LIVE = [], SOON = [], nextT = Infinity;
+function card(q, tag) {
+  const tags = `<span class="lv">LV ${q.lv}</span>${tag ? `<span class="chip c-new">${tag}</span>` : ''}<span class="chip c-yp">KEYWORD: ${q.kw}</span>`;
+  return `<article class="g" id="${q.id}">
+  ${q.photo ? `<div class="ph"><img src="${im(q.photo)}" alt="${esc(q.name)}: a scene from the reel" width="800" height="600" loading="lazy"><div class="tags">${tags}${q.ig ? `<a class="reel" href="${q.ig}" target="_blank" rel="noopener">Watch reel ↗</a>` : ''}</div></div>` : `<div class="g-top">${tags}</div>`}
+  <div class="g-h"><h3>${esc(q.name)}</h3><span class="time">${esc(q.time)}</span></div>
+  <p class="goal">${esc(q.goal)}</p>
+  <div class="sub">WHAT YOU NEED</div>
+  <ul class="kit">${q.kit.map(([label, ref, why]) => ref ? `<li><a href="${linkFor(ref, q.id)}" target="_blank" rel="noopener"><div>${esc(label)}${why ? `<small>${esc(why)}</small>` : ''}</div><em>${ref.startsWith('http') ? 'Official site ↗' : 'Search ↗'}</em></a></li>` : `<li><a class="free" aria-disabled="true"><div>${esc(label)}</div></a></li>`).join('')}</ul>
+  <div class="sub">STEPS</div>
+  <ol>${q.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
+  ${q.strip ? `<div class="sub">FROM THE REEL</div><div class="strip">${q.strip.map(([src, cap]) => `<figure><img src="${im(src)}" alt="${esc(cap)}" width="270" height="480" loading="lazy"><figcaption>${esc(cap)}</figcaption></figure>`).join('')}</div>` : ''}
+  ${q.rule.length ? `<ul class="rule">${q.rule.map(([k, s]) => `<li class="${k}"><span class="ic">${k === 'ok' ? '&#10003;' : '&#10005;'}</span>${esc(s)}</li>`).join('')}</ul>` : ''}
+  <div class="sub">AVOID THESE</div>
+  <ul class="miss">${q.miss.map(s => `<li>${esc(s)}</li>`).join('')}</ul>
+  <div class="bonus"><b>★ LEVEL-UP BONUS</b><span>Only in the guide</span><p>${esc(q.bonus)}</p></div>
+  <details><summary>Why it works</summary><p>${esc(q.why)}</p></details>
+  <div class="acts"><button class="btn b-ro done-btn" type="button" data-done="${q.id}">I did it: +1 LV</button><button class="btn b-line" type="button" data-copy="${q.id}">Copy checklist</button></div>
+</article>`;
+}
+function render() {
+  const now = Date.now();
+  LIVE = Q.filter(q => q.t0 <= now).sort((a, b) => b.t0 - a.t0);
+  SOON = Q.filter(q => q.t0 > now).sort((a, b) => a.t0 - b.t0);
+  nextT = SOON.length ? SOON[0].t0 : Infinity;
+  const top = LIVE[0], fresh = q => q === top && now - q.t0 < 36 * 3600e3;
+  $('latest').href = '#' + top.id;
+  $('latest').innerHTML = `<img src="${coverOf(top)}" alt="" width="405" height="720"><span><span class="chip ${fresh(top) ? 'c-new' : 'c-yp'}">${fresh(top) ? 'NEW QUEST' : 'LATEST QUEST'}</span><b>LV ${top.lv} · ${esc(top.name)}</b><small>Comment ${top.kw} on the reel and FOXY DMs you this guide.</small></span>`;
+  const lock = q => `<a class="cover lock" href="#nextdrop" aria-label="LV ${q.lv} unlocks ${esc(when(q.t0))}">${q.cover ? `<img src="${im(q.cover)}" alt="" width="405" height="720" loading="lazy">` : fox}<span class="lockbox"><span class="lv">LV ${q.lv}</span><span>Unlocks in</span><b class="cd" data-t="${q.t0}">${left(q.t0 - now)}</b></span></a>`;
+  $('rail').innerHTML = (SOON[0] ? lock(SOON[0]) : '') + LIVE.map(q => `<a class="cover${fresh(q) ? ' is-new' : ''}" href="#${q.id}"><img src="${coverOf(q)}" alt="LV ${q.lv}: ${esc(q.t.join(' '))}" width="405" height="720" loading="lazy">${fresh(q) ? '<span class="chip c-new">NEW</span>' : ''}</a>`).join('');
+  $('qlist').innerHTML = LIVE.map(q => `<label class="q" data-id="${q.id}"><img src="${coverOf(q)}" alt="" width="36" height="64" loading="lazy"><span class="lv">LV ${q.lv}</span><span class="t">${esc(q.name)}<small>${esc(q.t.join(' '))}</small></span><input type="checkbox" value="${q.id}" aria-label="Cleared ${esc(q.name)}"></label>`).join('');
+  $('kws').innerHTML = LIVE.map(q => `<button type="button" data-kw="${q.kw}">${q.kw}</button>`).join('');
+  $('v1').innerHTML = `<img src="${coverOf(top)}" alt="" width="405" height="720" loading="lazy">`;
+  $('v2').textContent = top.kw;
+  const h = decodeURIComponent(location.hash.slice(1)).toLowerCase(), early = SOON.find(q => q.id === h);
+  $('grid').innerHTML = (early ? card(early, 'EARLY ACCESS') : '') + LIVE.map(q => card(q, fresh(q) ? 'NEW' : '')).join('');
+  const nx = SOON[0];
+  $('nxpic').innerHTML = nx && nx.cover ? `<img src="${im(nx.cover)}" alt="" width="405" height="720" loading="lazy">` : fox;
+  if (nx) { $('nxh').innerHTML = `LV ${nx.lv} unlocks in <em class="cd" data-t="${nx.t0}">${left(nx.t0 - now)}</em>`; $('nxp').textContent = when(nx.t0) + ' on Instagram. Follow so the next quest finds you.'; }
+  else { $('nxh').innerHTML = 'Next quest drops at <em>7 PM ET</em>'; $('nxp').textContent = 'A new level every day. Follow so the next one finds you.'; }
+  paint(false);
+}
+const big = $('big');
+function paint(pop) {
+  const ids = new Set(LIVE.map(q => q.id)), n = [...done].filter(id => ids.has(id)).length, lv = 20 + n;
+  $('lvnum').textContent = lv; $('hlv').textContent = 'LV ' + lv; $('rname').textContent = RANK(lv);
+  $('rsub').textContent = n ? n + ' of ' + LIVE.length + ' quests cleared' : 'Tick the quests you\'ve already done';
+  $('arc').setAttribute('stroke-dasharray', (LIVE.length ? Math.round(100 * n / LIVE.length) : 0) + ' 100');
+  document.querySelectorAll('.q').forEach(el => { const on = done.has(el.dataset.id); el.classList.toggle('done', on); el.querySelector('input').checked = on; });
+  document.querySelectorAll('.g').forEach(el => { const on = done.has(el.id); el.classList.toggle('cleared', on); el.querySelector('.done-btn').textContent = on ? '✓ Cleared' : 'I did it: +1 LV'; });
+  $('cnum').textContent = 'LV ' + lv; $('crank').textContent = RANK(lv).toUpperCase();
+  $('cmini').innerHTML = LIVE.filter(q => done.has(q.id)).slice(0, 8).map(q => `<img src="${coverOf(q)}" alt="" width="28" height="50">`).join('');
+  $('cmsg').textContent = n ? 'You cleared ' + n + (n > 1 ? ' quests' : ' quest') + '. Screenshot the card and show it off.' : 'Tick the quests you\'ve cleared and this card levels up with you.';
+  if (pop) { big.classList.remove('pop'); void big.offsetWidth; big.classList.add('pop'); }
+}
+$('ccopy').addEventListener('click', async e => {
+  const b = e.currentTarget, text = 'I\'m LV ' + $('lvnum').textContent + ' on @whatsyourlevel_ 🦊 What\'s your level?';
+  try { await navigator.clipboard.writeText(text); b.textContent = 'Copied!'; } catch (err) { $('cmsg').textContent = 'Copy this caption: ' + text; }
+  setTimeout(() => { b.textContent = 'Copy story caption'; }, 2400);
+});
+function setDone(id, on) { on ? done.add(id) : done.delete(id); save(); paint(on); }
+$('qlist').addEventListener('change', e => setDone(e.target.value, e.target.checked));
+function openGuide(id) {
+  document.querySelectorAll('.g.hit').forEach(el => el.classList.remove('hit'));
+  const el = document.getElementById(id);
+  if (!el || !el.classList.contains('g')) return false;
+  el.classList.add('hit'); el.scrollIntoView({ block: 'start' }); return true;
+}
+const msg = $('kwmsg');
+function findKw(raw) {
+  const k = String(raw || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  if (!k) { msg.textContent = 'Type the word from the end of the reel.'; return; }
+  const q = Q.find(x => x.kw === k);
+  if (!q) { msg.textContent = 'No quest with that word yet. Check the end of the latest reel.'; return; }
+  if (q.t0 > Date.now()) { msg.textContent = 'That quest unlocks ' + when(q.t0) + '. See you there.'; return; }
+  msg.textContent = 'Found it: ' + q.name + '.';
+  if (location.hash === '#' + q.id) openGuide(q.id); else location.hash = q.id;
+}
+$('kwform').addEventListener('submit', e => { e.preventDefault(); findKw($('kwin').value); });
+$('kws').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { $('kwin').value = b.dataset.kw; findKw(b.dataset.kw); } });
+$('grid').addEventListener('click', async e => {
+  const d = e.target.closest('[data-done]');
+  if (d) { setDone(d.dataset.done, !done.has(d.dataset.done)); return; }
+  const b = e.target.closest('[data-copy]'); if (!b) return;
+  const q = Q.find(x => x.id === b.dataset.copy);
+  const text = `LV ${q.lv} · ${q.name} (${q.time})\nGoal: ${q.goal}\nWhat you need: ${q.kit.map(([l]) => l).join(', ')}\n` + q.steps.map((s, i) => `${i + 1}. ${s}`).join('\n') + (q.rule.length ? '\n' + q.rule.map(([k, s]) => (k === 'ok' ? '✓ ' : '✕ ') + s).join('\n') : '') + '\nAvoid: ' + q.miss.join(' / ') + '\n★ Bonus: ' + q.bonus + "\n— What's your level? @whatsyourlevel_";
+  try { await navigator.clipboard.writeText(text); b.textContent = 'Copied!'; }
+  catch (err) { const t = document.createElement('textarea'); t.value = text; t.rows = 6; t.style.width = '100%'; b.closest('.g').appendChild(t); t.select(); b.textContent = 'Select and copy below'; }
+  setTimeout(() => { b.textContent = 'Copy checklist'; }, 2200);
+});
+const rail = $('rail');
+const stepW = () => { const c = rail.querySelector('.cover'); return c ? c.offsetWidth + 16 : 240; };
+const step = d => rail.scrollBy({ left: d * stepW(), behavior: 'smooth' });
+$('prev').addEventListener('click', () => step(-1));
+$('next').addEventListener('click', () => step(1));
+rail.addEventListener('keydown', e => { if (e.key === 'ArrowRight') step(1); if (e.key === 'ArrowLeft') step(-1); });
+let idleUntil = 0;
+['pointerdown', 'wheel', 'touchstart', 'focusin', 'pointerenter'].forEach(ev => rail.addEventListener(ev, () => { idleUntil = Date.now() + 6000; }, { passive: true }));
+const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!calm) setInterval(() => {
+  if (Date.now() < idleUntil || document.hidden) return;
+  if (rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 8) rail.scrollTo({ left: 0, behavior: 'smooth' }); else step(1);
+}, 3200);
+setInterval(() => {
+  const now = Date.now();
+  if (now >= nextT) { render(); return; }
+  document.querySelectorAll('.cd[data-t]').forEach(el => { el.textContent = left(+el.dataset.t - now); });
+}, 1000);
+const route = () => {
+  const id = decodeURIComponent(location.hash.slice(1)).toLowerCase();
+  if (!id) return;
+  if (!document.getElementById(id) && SOON.some(q => q.id === id)) render();
+  if (!openGuide(id)) { const el = document.getElementById(id); if (el) el.scrollIntoView({ block: 'start' }); }
+};
+window.addEventListener('hashchange', route);
+document.querySelectorAll('img[data-img]').forEach(el => { el.src = im(el.dataset.img); });
+render(); renderStats(); route();
+}
+</script>
+</body>
+</html>
