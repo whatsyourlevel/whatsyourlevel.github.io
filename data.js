@@ -37,7 +37,12 @@ const IMG = {
   "img/s27-3.jpg": "https://d2ol7oe51mr4n9.cloudfront.net/user_398gTQGa4GMr7U58iASEJju7zf7/9cd6e8f6-cd85-4d22-b885-eddca816482a.jpg",
   "img/s28-1.jpg": "https://d2ol7oe51mr4n9.cloudfront.net/user_398gTQGa4GMr7U58iASEJju7zf7/6cc5f822-baf4-4985-89a8-03b5705677ba.jpg",
   "img/s28-2.jpg": "https://d2ol7oe51mr4n9.cloudfront.net/user_398gTQGa4GMr7U58iASEJju7zf7/4ef533e2-29be-4f5e-9a64-156ebc21051e.jpg",
-  "img/s28-3.jpg": "https://d2ol7oe51mr4n9.cloudfront.net/user_398gTQGa4GMr7U58iASEJju7zf7/e2ceebda-23d7-4383-aaa4-a875d81ac918.jpg"
+  "img/s28-3.jpg": "https://d2ol7oe51mr4n9.cloudfront.net/user_398gTQGa4GMr7U58iASEJju7zf7/e2ceebda-23d7-4383-aaa4-a875d81ac918.jpg",
+  "img/c29.jpg": "https://d2ol7oe51mr4n9.cloudfront.net/user_398gTQGa4GMr7U58iASEJju7zf7/4e1e40ca-a6c5-47f5-ad6d-9c1d7db38934.jpg",
+  "img/p29.jpg": "https://d2ol7oe51mr4n9.cloudfront.net/user_398gTQGa4GMr7U58iASEJju7zf7/f49a0d83-447d-4b06-9b99-23eacf4a8d89.jpg",
+  "img/s29-1.jpg": "https://d2ol7oe51mr4n9.cloudfront.net/user_398gTQGa4GMr7U58iASEJju7zf7/5417adb1-86e7-4b04-ab3e-2801eae76d8a.jpg",
+  "img/s29-2.jpg": "https://d2ol7oe51mr4n9.cloudfront.net/user_398gTQGa4GMr7U58iASEJju7zf7/e4c8245e-2ac1-4de8-bbfc-465cd9be2239.jpg",
+  "img/s29-3.jpg": "https://d2ol7oe51mr4n9.cloudfront.net/user_398gTQGa4GMr7U58iASEJju7zf7/38021615-8b4c-41ea-9ff3-274a8e5872c5.jpg"
  };
 
 /* follower + reel view numbers shown in "The numbers" */
@@ -120,7 +125,16 @@ const Q = [
   rule:[['ok','Two finger lengths, patted in: even and invisible'],['no','A tiny dab rubbed in: patchy and weak']],
   miss:['Using too little. Protection drops fast below the right amount.','Skipping your ears and neck.','Only wearing it in summer. UV hits in winter too.'],
   bonus:'Outside all day? Reapply every two hours and after sweating. A sun stick is the easiest way to top up over your skin.',
-  why:'Sunscreen is tested at about two finger lengths for the face, so less gives you less protection. Patting spreads it evenly, and light Korean formulas sit thin, so you do not look greasy.'}
+  why:'Sunscreen is tested at about two finger lengths for the face, so less gives you less protection. Patting spreads it evenly, and light Korean formulas sit thin, so you do not look greasy.'},
+ {id:'selfie', lv:29, kw:'SELFIE', t:['Find colors','that suit you'], name:'The B&W selfie test', time:'1 min', drop:'2026-12-02T09:00:00+09:00', ig:null, cover:'img/c29.jpg', photo:'img/p29.jpg',
+  strip:[['img/s29-1.jpg','Take a selfie'],['img/s29-2.jpg','Turn it black and white'],['img/s29-3.jpg','Compare hair and skin']],
+  goal:'Find out in one minute whether black & white or beige & gray suits you best.',
+  kit:[['Just your phone',null,'The black and white filter is already in your photo editor.']],
+  steps:['Stand facing a window in daylight. No flash, no beauty filter.','Take a straight-on selfie with your hair and face in the frame.','Open it in your photo editor and switch it to black and white (Mono or Noir).','Compare your hair and your skin. Is the gap between them big or small?','Big gap means high contrast. Small gap means low contrast. Shop the colors for your result.'],
+  rule:[['ok','Match your contrast: high gets black & white, low gets beige & gray'],['no','Hard black and white on a low-contrast face: the outfit wears you']],
+  miss:['Testing under warm indoor lights. They hide your real contrast.','Using portrait mode or a beauty filter. It smooths the difference away.','Judging in color. Color distracts you; black and white shows only light and dark.'],
+  bonus:'Somewhere in between? Mix one deep color with one soft one, like a navy coat over a gray knit.',
+  why:'Black and white strips away color, so you only see light and dark. Clothes look best when they repeat the contrast already in your face: strong for a high-contrast face, soft for a low one.'}
 ];
 
 window.WYL = { IMG, Q, STATS };
