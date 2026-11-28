@@ -41,7 +41,7 @@ const IMG = {
  };
 
 /* follower + reel view numbers shown in "The numbers" */
-const STATS = { asOf: '2026-11-27', followers: 399, reels: [['DgG9PVPzLKS', 21, 519], ['DgNLpGiTYrZ', 22, 2092], ['DgOYW2uonBv', 23, 1511], ['DgOo3-5Tuia', 24, 1262]] };
+const STATS = { asOf: '2026-11-28', followers: 399, reels: [['DgG9PVPzLKS', 21, 519], ['DgNLpGiTYrZ', 22, 2296], ['DgOYW2uonBv', 23, 1632], ['DgOo3-5Tuia', 24, 1303], ['DgQ60Cwj8pA', 25, 363]] };
 
 /* quests, oldest first */
 const Q = [
@@ -85,7 +85,7 @@ const Q = [
   miss:['Pulling with one hand only: the bow comes out lopsided.','Loops too long: they drag and come undone.','Rushing it. Do it slowly 5 times, then speed up.'],
   bonus:'Laces keep coming undone? Before you pull, check that both loops are the same size, and switch to flat waxed laces. Even loops hold far better than lopsided ones.',
   why:'Both hands make a loop at the same time, so the bow comes out even every time. That is why it is fast and holds.'},
- {id:'night', lv:25, kw:'NIGHT', t:['When to put on','deodorant'], name:'The night trick', time:'10 sec', drop:'2026-11-28T09:00:00+09:00', ig:null, cover:'img/c25.jpg', photo:'img/p25.jpg',
+ {id:'night', lv:25, kw:'NIGHT', t:['When to put on','deodorant'], name:'The night trick', time:'10 sec', drop:'2026-11-28T09:00:00+09:00', ig:reel('DgQ60Cwj8pA'), cover:'img/c25.jpg', photo:'img/p25.jpg',
   strip:[['img/s25-1.jpg','Night: pro move'],['img/s25-2.jpg','Morning: noob move'],['img/s25-3.jpg','The night trick']],
   goal:'Stay dry all day by putting antiperspirant on at the right time.',
   kit:[['Certain Dri clinical antiperspirant','https://www.certaindri.com','Made to go on at night.'],['Dove Men+Care Clinical Protection','https://www.dove.com','A strong everyday pick.']],
